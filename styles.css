@@ -1,0 +1,263 @@
+
+:root{
+  --bg:#fff7f3;
+  --primary:#e02d2d;
+  --primary-700:#b22222;
+  --accent:#ffd54a;
+  --ink:#231f20;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.topbar{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+.topbar .wrap{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:10px 16px}
+.logo{height:44px;object-fit:contain}
+.nav a{margin:0 10px;text-decoration:none;color:var(--ink)}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;border:1px solid #ddd;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.outline{background:#fff;color:var(--primary);border-color:var(--primary)}
+.btn.small{padding:6px 10px;border-radius:8px;font-size:14px}
+.link{background:none;border:none;color:var(--primary);cursor:pointer}
+
+.hero{background:linear-gradient(180deg,#ffe5d7,#fff);padding:48px 0}
+.hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 10px}
+.hero h1 span{color:var(--primary)}
+.hero p{max-width:700px;color:#444}
+.hero-actions{display:flex;gap:12px;margin-top:16px}
+
+.section{padding:40px 0}
+.section.alt{background:#fff}
+h2{margin:0 0 16px;font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:180px;object-fit:cover}
+.card .info{padding:12px 12px 16px;display:flex;flex-direction:column;gap:8px}
+.card .price{font-weight:700;color:var(--primary)}
+
+.builder{display:grid;gap:16px}
+.field{display:grid;gap:8px}
+.field.two{grid-template-columns:1fr 1fr;gap:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips input{display:none}
+.chips label{padding:8px 12px;border:1px solid #ddd;border-radius:20px;cursor:pointer}
+.chips input:checked + label{background:var(--primary);color:#fff;border-color:var(--primary)}
+.toppings{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px}
+.toppings label{display:flex;align-items:center;gap:8px}
+.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.total{background:#fff;border:1px dashed #ddd;padding:8px 12px;border-radius:10px}
+
+.cart{margin-top:16px;border-top:1px solid #eee;padding-top:12px}
+.cart-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed #eee}
+.cart-item:last-child{border-bottom:none}
+.muted{color:var(--muted)}
+
+.footer{background:#111;color:#eee;padding:24px 0;margin-top:32px}
+.footer a{color:#fff}
+.footer .copy{margin-top:8px;color:#aaa}
+
+.hidden{display:none}
+@media (max-width:680px){
+  .field.two{grid-template-columns:1fr}
+}
+.cart-item {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 10px; border: 1px solid #eee; border-radius: 10px; margin-bottom: 8px;
+}
+.cart-actions .btn { margin-left: 8px; }
+.muted { opacity: .7; }
+.link { background:none; border:none; text-decoration:underline; cursor:pointer; }
+.add-menu {
+  background-color: #d00000; /* Rojo intenso */
+  color: #ffffff;            /* Letras blancas */
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-menu:hover {
+  background-color: #a30000; /* Rojo más oscuro al pasar el mouse */
+}
+#waOrder {
+  background-color: #25D366; /* Verde WhatsApp */
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#waOrder:hover {
+  background-color: #1ebc5c; /* Un verde más oscuro al pasar el mouse */
+}
+/* ======== RESPONSIVE PARA CELULARES ======== */
+@media (max-width: 768px) {
+  .topbar .wrap,
+  .footer .wrap,
+  .menu-grid,
+  .form {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    width: 180px;
+    margin: 0 auto 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav a {
+    display: block;
+    margin: 5px 0;
+    font-size: 18px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .form .field {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .toppings {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toppings label {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+/* Campo */
+#sabritasField {
+  margin-top: 12px;
+}
+
+/* Dropdown Sabritas */
+#sabritasSelect {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc; /* Gris claro */
+  border-radius: 8px;
+  background-color: transparent; /* Sin fondo */
+  font-size: 1.2rem; /* Letras grandes */
+  font-weight: bold;
+  color: #000; /* Texto blanco */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+/* Hover */
+#sabritasSelect:hover {
+  border-color: #ffcc00; /* Amarillo maíz al pasar */
+}
+
+/* Focus */
+#sabritasSelect:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 6px rgba(255, 204, 0, 0.6);
+}
+.promo.hidden{ display:none; }
+
+.promo {
+  background: linear-gradient(90deg, #111, #222);
+  color: #fff;
+  padding: 28px 0;
+  border-bottom: 2px solid #ffcc00; /* amarillo maíz */
+}
+
+.promo-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+
+.promo-title { margin-right: 8px; color: #ffcc00;font-size: 1.5rem; /* más grande */
+  font-weight: 900; }
+.promo-text { opacity: .95; font-size: 1.2rem; /* más grande */
+  font-weight: 500; }
+
+.promo-actions { display: flex; align-items: center; gap: 10px; }
+.promo-close {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  font-size: 26px; /* más grande */
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 8px;
+}
+.promo-close:hover { background: rgba(255,255,255,.12); }
+
+.btn.small {padding: 12px 18px; /* más grande */
+  font-size: 1rem;
+  font-weight: 700;
+  background: #ffcc00;
+  color: #111;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;}
+  .btn.small:hover {
+  background: #ffb700;
+}
+/* ==== AJUSTE DE IMÁGENES DE PRODUCTOS ==== */
+.grid-cards .card .thumb {
+  height: 180px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+.grid-cards .card .thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}

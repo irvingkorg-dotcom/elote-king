@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elote King – Snacks</title>
+  <meta name="description" content="Elote King Snacks – Elotes, maruchan loca, chicharrón preparado y más. ¡Arma tu antojo y ordénalo por WhatsApp!" />
+  <link rel="icon" href="assets/lona_eeloteking.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <img class="logo" src="assets/lona_eeloteking.png" alt="Elote King Logo" />
+      <nav class="nav">
+        <a href="#bienvenida">Inicio</a>
+        <a href="#menu">Menú</a>
+        <a href="#arma">Arma tu antojo</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a id="orderBtn" class="btn primary" href="#arma">Ordenar</a>
+    </div>
+  </header>
+  <section id="promo" class="promo hidden" aria-live="polite">
+  <div class="wrap promo-inner">
+    <div>
+      <strong class="promo-title">Promo activa</strong>
+      <span class="promo-text">Descripción de la promo aquí.</span>
+    </div>
+    <div class="promo-actions">
+      <a class="btn small" id="promoCta" href="#arma">Aprovechar</a>
+      <button class="promo-close" id="promoClose" aria-label="Cerrar">×</button>
+    </div>
+  </div>
+</section>
+
+  <section id="bienvenida" class="hero">
+    <div class="wrap hero-inner">
+      <h1>¡Bienvenido a <span>Elote King</span>! 👑🌽</h1>
+      <p>El antojo se respeta. Elotes, maruchan loca, chicharrón preparado y más, con todos tus toppings favoritos.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#menu">Ver Menú</a>
+        <a class="btn outline" href="#arma">Arma el tuyo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="wrap">
+      <h2>Menú destacado</h2>
+      <div class="grid cards">
+        <article class="card">
+          <img src="assets/elote_en_vaso.png" alt="Elote en vaso" />
+          <div class="info">
+            <h3>Elote en vaso</h3>
+            <p>Chico, mediano o grande. Con queso, mayonesa, chile... ¡a tu gusto!</p>
+            <div class="price">$30 / $40 / $60</div>
+            <button class="btn small add-menu" data-item='elote_vaso'>Agregar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/maruchan_loca.png" alt="Maruchan Loca" />
+          <div class="info">
+            <h3>Maruchan loca</h3>
+            <p>Súper completa y bien hecha.</p>
+            <div class="price">$100</div>
+            <button class="btn small add-menu" data-item='maruchan_loca'>Agregar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/tostielote.png" alt="Tostielote" />
+          <div class="info">
+            <h3>Tostielote</h3>
+            <p>Elije las sabritas de tu preferencia.</p>
+            <div class="price">$70</div>
+            <button class="btn small add-menu" data-item='tostielote'>Agregar</button>
+          </div>
+        </article>
+
+         <article class="card">
+          <img src="assets/elote-empanizado.png" alt="Elote empanizado" />
+          <div class="info">
+            <h3>Elote empanizado</h3>
+            <p>Elije las sabritas de tu preferencia.</p>
+            <div class="price">$70</div>
+            <button class="btn small add-menu" data-item='elote-empanizado'>Agregar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/chorriado.png" alt="Chorriado" />
+          <div class="info">
+            <h3>Chorriado</h3>
+            <p>Hora de un chorriado lleno de sabor.</p>
+            <div class="price">$85</div>
+            <button class="btn small add-menu" data-item='chorriado'>Agregar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/maruchan_volcan.jpg" alt="Maruchan Volcán" />
+          <div class="info">
+            <h3>Maruchan volcán</h3>
+            <p>Explosión de sabor con todo encima.</p>
+            <div class="price">$130</div>
+            <button class="btn small add-menu" data-item='maruchan_volcan'>Agregar</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/chicharron.png" alt="Chicharrón preparado" />
+          <div class="info">
+            <h3>Chicharrón preparado</h3>
+            <p>Crujiente, cargado y sabroso.</p>
+            <div class="price">$50</div>
+            <button class="btn small add-menu" data-item='chicharron'>Agregar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="arma" class="section alt">
+    <div class="wrap">
+      <h2>Arma tu antojo</h2>
+      <form id="builder" class="builder">
+        <div class="field">
+          <label>Producto</label>
+          <select name="producto" id="producto">
+            <option value="elote_vaso">Elote en vaso</option>
+            <option value="maruchan_loca">Maruchan loca</option>
+            <option value="maruchan_volcan">Maruchan volcán</option>
+            <option value="chorriado">Chorriado</option>
+            <option value="chicharron">Chicharrón preparado</option>
+            <option value="tostielote">Tostielote</option>
+            <option value="elote-empanizado">Elote empanizado</option>
+          </select>
+        </div>
+
+        <div class="field" id="sizeField">
+          <label>Tamaño</label>
+          <div class="chips">
+            <input type="radio" id="sz_chico" name="tam" value="chico" checked>
+            <label for="sz_chico">Chico</label>
+            <input type="radio" id="sz_med" name="tam" value="mediano">
+            <label for="sz_med">Mediano</label>
+            <input type="radio" id="sz_gde" name="tam" value="grande">
+            <label for="sz_gde">Grande</label>
+          </div>
+        </div>
+        <div class="field hidden" id="sabritasField">
+  <label>Tipo de Sabritas</label>
+  <select id="sabritasSelect">
+    <option value="">Selecciona una opción</option>
+    <option value="Tostitos verdes">Tostitos verdes</option>
+    <option value="Tostitos morados">Tostitos morados</option>
+    <option value="Cheetos Flaming Hot">Cheetos Flaming Hot</option>
+  </select>
+</div>
+        <div class="field">
+          <label>Toppings</label>
+          <div class="toppings">
+            <label><input type="checkbox" value="Cacahuate salado">Cacahuate salado</label>
+            <label><input type="checkbox" value="Cacahuate cantinero">Cacahuate cantinero</label>
+            <label><input type="checkbox" value="Chile liquido-no pica">Chile liquido-no pica</label>
+            <label><input type="checkbox" value="Chile en polvo">Chile en polvo</label>
+            <label><input type="checkbox" value="Ajonjoli molido">Ajonjoli molido</label>
+            <label><input type="checkbox" value="Salsa macha-picante">Salsa macha-picante</label>
+            <label><input type="checkbox" value="Aderezo chipotle">Aderezo chipotle</label>
+            <label><input type="checkbox" value="Aderezo habanero">Aderezo habanero</label>
+            <label><input type="checkbox" value="Tajin">Tajin</label>
+          </div>
+        </div>
+
+        <div class="field two">
+          <div>
+            <label>¿Entrega?</label>
+            <select id="entrega">
+              <option value="para recoger">Para recoger</option>
+              <option value="domicilio">Domicilio</option>
+            </select>
+          </div>
+          <div id="direccionField" class="hidden">
+            <label>Dirección (opcional)</label>
+            <input type="text" id="direccion" placeholder="Calle, número, colonia" />
+          </div>
+        </div>
+        <div class="actions">
+          <div class="total">
+            Total estimado: <strong id="total">$0</strong>
+          </div>
+          <button type="button" class="btn outline" id="addCart">Agregar al pedido</button>
+        </div>
+      </form>
+
+      <div class="cart" id="cart"></div>
+      <div class="cart-actions" id="cartActions" style="display:none; gap:12px; align-items:center; margin-top:12px;">
+  <div>Total del pedido: <strong id="cartTotal">$0</strong></div>
+  <button type="button" class="btn primary" id="waCart">Enviar pedido por WhatsApp</button>
+  <button type="button" class="btn outline" id="clearCart">Vaciar</button>
+</div>
+
+    </div>
+  </section>
+
+  <footer id="contacto" class="footer">
+    <div class="wrap">
+      <div>
+        <h3>Elote King Snacks</h3>
+        <p>WhatsApp: <a href="https://wa.me/528997788333" target="_blank">899 77 88 333</a></p>
+        <p>Horario: 5:00 pm – 11:00 pm</p>
+      </div>
+      <p class="copy">© 2025 Elote King. Hecho con antojo.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Productos que requieren elegir tipo de Sabritas
+const SABRITAS_PRODUCTS = [
+  'maruchan_loca',
+  'maruchan_volcan',
+  'chorriado',
+  'tostielote',
+  'elote-empanizado',
+];
+
+// Helper
+const usesSabritas = (prod) => SABRITAS_PRODUCTS.includes(prod);
+
+    // ====== PROMO CONFIG ======
+const PROMO = {
+  title: "🔥 Promo de fin de semana",
+  text: "2x1 en Elote en Vaso de 7–9 PM. Válido solo hoy.",
+  ctaHref: "#arma",                 // a dónde manda el botón
+  start: "2025-08-08T00:00:00-05:00", // yyyy-mm-ddTHH:mm:ss-05:00 (Monterrey)
+  end:   "2025-08-12T23:59:59-05:00",
+  key:   "ek_promo_2025_08_09"      // cambia este id cuando cambies de promo
+};
+
+const QS = new URLSearchParams(location.search);
+
+function nowMX(){
+  // hora del navegador (suficiente para un sitio estático)
+  return new Date();
+}
+
+function withinDates(start, end){
+  const n = nowMX();
+  return (!start || n >= new Date(start)) && (!end || n <= new Date(end));
+}
+
+function getPromoEnabled(){
+  // Fuerza por URL
+  if (QS.get("promo") === "on") { localStorage.setItem("ek_promo_enabled","1"); }
+  if (QS.get("promo") === "off"){ localStorage.removeItem("ek_promo_enabled"); }
+  return localStorage.getItem("ek_promo_enabled") === "1";
+}
+
+function isPromoDismissed(){
+  return localStorage.getItem(`dismiss_${PROMO.key}`) === "1";
+}
+
+function renderPromo(initial=false){
+  const el = document.getElementById("promo");
+  const titleEl = document.querySelector(".promo-title");
+  const textEl  = document.querySelector(".promo-text");
+  const ctaEl   = document.getElementById("promoCta");
+
+  const active = getPromoEnabled() && withinDates(PROMO.start, PROMO.end) && !isPromoDismissed();
+
+  if (!active){
+    el.classList.add("hidden");
+    return;
+  }
+
+  titleEl.textContent = PROMO.title;
+  textEl.textContent  = PROMO.text;
+  ctaEl.setAttribute("href", PROMO.ctaHref);
+  el.classList.remove("hidden");
+}
+
+// Cerrar banner (no vuelve a salir hasta que cambies PROMO.key o lo reactives)
+document.addEventListener("DOMContentLoaded", () => {
+  const closeBtn = document.getElementById("promoClose");
+  closeBtn?.addEventListener("click", () => {
+    localStorage.setItem(`dismiss_${PROMO.key}`, "1");
+    document.getElementById("promo").classList.add("hidden");
+  });
+
+  renderPromo(true);
+});
+
+// Atajo "admin": Ctrl + P → toggle promo on/off y render
+document.addEventListener("keydown", (e) => {
+  if (e.ctrlKey && e.key.toLowerCase() === "p") {
+    const enabled = getPromoEnabled();
+    if (enabled) localStorage.removeItem("ek_promo_enabled");
+    else localStorage.setItem("ek_promo_enabled","1");
+    // al cambiar de estado, también “desdescartar” para volver a verla
+    localStorage.removeItem(`dismiss_${PROMO.key}`);
+    renderPromo();
+    alert(`Promo ${enabled ? "desactivada" : "activada"}.`);
+  }
+});
+
+  const PHONE = "528997788333";
+
+  const BASES = {
+    elote_vaso: { name: "Elote en vaso", price: {chico:30, mediano:40, grande:60} },
+    maruchan_loca: { name: "Maruchan loca", price: 100 },
+    maruchan_volcan: { name: "Maruchan volcán", price: 130 },
+    chorriado: { name: "Chorriado", price: 85 },
+    chicharron: { name: "Chicharrón preparado", price: 50 },
+    tostielote: { name: "Tostielote", price: 70 },
+    "elote-empanizado": { name: "Elote empanizado", price: 70 },
+  };
+
+  const TOPPING_PRICE = 0;
+
+  const productoSel = document.getElementById('producto');
+  const sizeField = document.getElementById('sizeField');
+  const entregaSel = document.getElementById('entrega');
+  const direccionField = document.getElementById('direccionField');
+  const direccionInput = document.getElementById('direccion');
+  const totalEl = document.getElementById('total');
+  const cartEl = document.getElementById('cart');
+  const cartActions = document.getElementById('cartActions');
+  const cartTotalEl = document.getElementById('cartTotal');
+  function resetBuilder() {
+  // Toppings: desmarcar todo
+  document.querySelectorAll('.toppings input[type="checkbox"]').forEach(i => i.checked = false);
+  // Tamaño: volver a chico
+  const chico = document.getElementById('sz_chico');
+  if (chico) chico.checked = true;
+  // Sabritas: limpiar selección
+  const sabSel = document.getElementById('sabritasSelect');
+  if (sabSel) sabSel.value = '';
+  // Entrega/dirección: reset
+  if (entregaSel) entregaSel.value = 'para recoger';
+  // Asegura que NUNCA sea obligatorio
+  if (direccionInput) direccionInput.required = false;
+  // Recalcular total
+  calcTotal();
+}
+
+  // ===== Helpers =====
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+  const fmt = n => `$${Number(n).toFixed(0)}`;
+
+  let cart = [];
+
+  // Persistencia
+  function saveCart(){ localStorage.setItem('ek_cart', JSON.stringify(cart)); }
+  function loadCart(){
+    try { cart = JSON.parse(localStorage.getItem('ek_cart')||'[]'); }
+    catch { cart = []; }
+  }
+
+  function updateVisibility() {
+    const prod = productoSel.value;
+    sizeField.style.display = (prod === 'elote_vaso') ? 'block' : 'none';
+    // Mostrar campo Sabritas solo para estos productos
+  const sabritasVisible = usesSabritas(productoSel.value);
+  document.getElementById('sabritasField').classList.toggle('hidden', !sabritasVisible);
+    direccionField.classList.toggle('hidden', entregaSel.value !== 'domicilio');
+    if (direccionInput) direccionInput.required = false; // <- clave
+    calcTotal();
+  }
+
+  function getSelectedSize() {
+    const r = document.querySelector('input[name="tam"]:checked');
+    return r ? r.value : 'chico';
+  }
+
+  function getSelectedToppings() {
+    return Array.from(document.querySelectorAll('.toppings input[type="checkbox"]:checked')).map(i=>i.value);
+  }
+
+  function calcTotal() {
+    const prod = productoSel.value;
+    const toppings = getSelectedToppings();
+    let base = 0;
+    if (prod === 'elote_vaso') {
+      const sz = getSelectedSize();
+      base = BASES[prod].price[sz];
+    } else {
+      base = BASES[prod].price;
+    }
+    const total = base + toppings.length * TOPPING_PRICE;
+    totalEl.textContent = fmt(total);
+    return total;
+  }
+
+  function buildItem(throwIfInvalid=false) {
+    const prod = productoSel.value;
+    const toppings = getSelectedToppings();
+    const entrega = entregaSel.value;
+    const sz = (prod === 'elote_vaso') ? getSelectedSize() : null;
+    // 🔽 Nuevo código Sabritas
+    const sabritasRequired = usesSabritas(prod);
+const sabritas = sabritasRequired ? document.getElementById('sabritasSelect').value : '';
+
+if (throwIfInvalid && sabritasRequired && !sabritas) {
+  alert('Por favor selecciona el tipo de Sabritas.');
+  document.getElementById('sabritasSelect').focus();
+  return null;
+}
+
+    // 🔼 Fin nuevo código
+    const total = calcTotal();
+    const direccion = entrega === 'domicilio' ? direccionInput.value.trim() : '';
+
+    //if (throwIfInvalid && entrega === 'domicilio' && !direccion) {
+      //alert('Por favor, escribe la dirección para envío a domicilio.');
+      //direccionInput.focus();
+     // return null;
+    //}
+
+    return {
+      prod,
+      name: BASES[prod].name,
+      size: sz,
+      toppings,
+      entrega,
+      direccion,
+      sabritas,
+      total
+    }
+  }
+
+  function getCartTotal(){
+    return cart.reduce((acc, it)=> acc + Number(it.total||0), 0);
+  }
+
+  function renderCart() {
+    if (cart.length === 0) {
+      cartEl.innerHTML = '<p class="muted">Tu pedido está vacío.</p>';
+      cartActions.style.display = 'none';
+      cartTotalEl.textContent = fmt(0);
+      saveCart();
+      return;
+    }
+    const html = cart.map((it, idx) => `
+      <div class="cart-item">
+        <div>
+          <strong>${it.name}</strong> – ${fmt(it.total)}<br/>
+          ${it.size ? ('Tamaño: ' + it.size + ' · ') : ''}
+          ${it.sabritas ? ('Sabritas: ' + it.sabritas + ' · ') : ''}
+          Toppings: ${it.toppings.join(', ') || '—'}<br/>
+          Entrega: ${it.entrega}${it.direccion? ' · ' + it.direccion : ''}
+        <div>
+          <button class="link" data-remove="${idx}">Quitar</button>
+        </div>
+      </div>
+    `).join('');
+    cartEl.innerHTML = html;
+    cartEl.querySelectorAll('[data-remove]').forEach(btn => btn.onclick = () => {
+      const i = parseInt(btn.dataset.remove);
+      cart.splice(i,1);
+      renderCart();
+    });
+
+    cartActions.style.display = 'flex';
+    cartTotalEl.textContent = fmt(getCartTotal());
+    saveCart();
+  }
+
+  // Smooth scroll incluso si ya estás en #arma
+  function goTo(hash){
+    const el = document.querySelector(hash);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Actualiza la URL sin depender del ancla para forzar scroll en clicks repetidos
+    history.pushState(null, '', hash);
+  }
+
+  // ===== Eventos =====
+  document.getElementById('addCart').onclick = () => {
+  const item = buildItem(true);
+  if (!item) return;
+  cart.push(item);
+  renderCart();
+  resetBuilder();   // ← limpia todo
+  updateVisibility();
+};
+
+  // Enviar carrito completo por WhatsApp, vaciarlo y mostrar agradecimiento
+document.getElementById('waCart').onclick = () => {
+  if (cart.length === 0) {
+    alert("Tu pedido está vacío.");
+    return;
+  }
+
+  // Validar direcciones si hay items a domicilio
+  for (const it of cart) {
+    if (it.entrega === 'domicilio' && !String(it.direccion || '').trim()) {
+      alert(`Falta dirección en: ${it.name}${it.size ? ' (' + it.size + ')' : ''}`);
+      return;
+    }
+  }
+
+  // Cuerpo por item (incluye Sabritas si aplica)
+  const cuerpo = cart.map((it, i) => 
+    `#${i+1} ${it.name}${it.size ? ' (' + it.size + ')' : ''}
+${it.sabritas ? 'Sabritas: ' + it.sabritas + '\n' : ''}Toppings: ${it.toppings.join(', ') || '—'}
+Entrega: ${it.entrega}${it.direccion ? ' · ' + it.direccion : ''}
+Subtotal: ${fmt(it.total)}`
+  ).join('\n\n');
+
+  const total = fmt(getCartTotal());
+  const msg = `Hola, quiero hacer este pedido:\n\n${cuerpo}\n\nTOTAL: ${total}`;
+
+  // Abrir WhatsApp
+  const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+
+  // Vaciar carrito
+  cart = [];
+  renderCart();
+
+  // Mostrar agradecimiento
+  const thanksMsg = document.createElement("div");
+  thanksMsg.textContent = "✅ ¡Gracias por tu pedido! Te esperamos pronto.";
+  thanksMsg.style.position = "fixed";
+  thanksMsg.style.bottom = "20px";
+  thanksMsg.style.right = "20px";
+  thanksMsg.style.background = "#4CAF50";
+  thanksMsg.style.color = "#fff";
+  thanksMsg.style.padding = "12px 20px";
+  thanksMsg.style.borderRadius = "8px";
+  thanksMsg.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+  thanksMsg.style.zIndex = "9999";
+  document.body.appendChild(thanksMsg);
+
+  // Quitar mensaje después de 4 segundos
+  setTimeout(() => {
+    thanksMsg.remove();
+  }, 4000);
+};
+
+  // Vaciar carrito
+  document.getElementById('clearCart').onclick = () => {
+    if (confirm('¿Vaciar todo el carrito?')) {
+      cart = [];
+      renderCart();
+    }
+  };
+
+  productoSel.onchange = () => {
+  resetBuilder();
+  updateVisibility(); // esto también muestra/oculta el campo Sabritas
+};
+  entregaSel.onchange = updateVisibility;
+  document.querySelectorAll('.toppings input, input[name="tam"]').forEach(i => i.onchange = calcTotal);
+
+  // Botones de “Agregar” en cards → saltar a #arma con smooth scroll y precargar producto
+  document.querySelectorAll('.add-menu').forEach(btn => {
+  btn.onclick = () => {
+    productoSel.value = btn.dataset.item;
+    resetBuilder();          // limpia toppings + sabritas
+    updateVisibility();      // ajusta visibilidad de campos
+    goTo('#arma');
+  }
+});
+
+  // Nav y botón “Ordenar” con scroll suave (sin depender del hash)
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const hash = a.getAttribute('href');
+      if (!hash || hash === '#') return;
+      e.preventDefault();
+      goTo(hash);
+    });
+  });
+
+  // Init
+  loadCart();
+  renderCart();
+  updateVisibility();
+</script>
+
+</body>
+</html>
