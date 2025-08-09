@@ -1,0 +1,355 @@
+
+:root{
+  --bg:#fff7f3;
+  --primary:#e02d2d;
+  --primary-700:#b22222;
+  --accent:#ffd54a;
+  --ink:#231f20;
+  --muted:#6b7280;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.topbar{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+.topbar .wrap{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:10px 16px}
+.logo{height:44px;object-fit:contain}
+.nav a{margin:0 10px;text-decoration:none;color:var(--ink)}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;border:1px solid #ddd;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn.outline{background:#fff;color:var(--primary);border-color:var(--primary)}
+.btn.small{padding:6px 10px;border-radius:8px;font-size:14px}
+.link{background:none;border:none;color:var(--primary);cursor:pointer}
+
+.hero{background:linear-gradient(180deg,#ffe5d7,#fff);padding:48px 0}
+.hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 10px}
+.hero h1 span{color:var(--primary)}
+.hero p{max-width:700px;color:#444}
+.hero-actions{display:flex;gap:12px;margin-top:16px}
+
+.section{padding:40px 0}
+.section.alt{background:#fff}
+h2{margin:0 0 16px;font-size:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #eee;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.card img{width:100%;height:180px;object-fit:cover}
+.card .info{padding:12px 12px 16px;display:flex;flex-direction:column;gap:8px}
+.card .price{font-weight:700;color:var(--primary)}
+
+.builder{display:grid;gap:16px}
+.field{display:grid;gap:8px}
+.field.two{grid-template-columns:1fr 1fr;gap:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips input{display:none}
+.chips label{padding:8px 12px;border:1px solid #ddd;border-radius:20px;cursor:pointer}
+.chips input:checked + label{background:var(--primary);color:#fff;border-color:var(--primary)}
+.toppings{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:6px}
+.toppings label{display:flex;align-items:center;gap:8px}
+.actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.total{background:#fff;border:1px dashed #ddd;padding:8px 12px;border-radius:10px}
+
+.cart{margin-top:16px;border-top:1px solid #eee;padding-top:12px}
+.cart-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed #eee}
+.cart-item:last-child{border-bottom:none}
+.muted{color:var(--muted)}
+
+.footer{background:#111;color:#eee;padding:24px 0;margin-top:32px}
+.footer a{color:#fff}
+.footer .copy{margin-top:8px;color:#aaa}
+
+.hidden{display:none}
+@media (max-width:680px){
+  .field.two{grid-template-columns:1fr}
+}
+
+
+/* --- Uniform product cards grid --- */
+.menu-grid, .cards, .productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.product-card, .card, .menu-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.product-card .thumb, .card .thumb, .menu-card .thumb {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.product-card .thumb img, .card .thumb img, .menu-card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-card .body, .card .body, .menu-card .body {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.product-card .actions, .card .actions, .menu-card .actions {
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.add-menu, .btn-add {
+  cursor: pointer;
+}
+
+
+/* Estilo Elote King */
+.product-card, .card, .menu-card {
+  border: 2px solid #FFD700; /* Amarillo */
+  background-color: #fffbea;
+}
+.add-menu, .btn-add {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+#waOrder {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+
+/* === Estilo Elote King solicitado === */
+.menu-card, .product-card, .card {
+  border: 2px solid #FFC107; /* amarillo */
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.menu-card .thumb, .product-card .thumb, .card .thumb {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+.menu-card .thumb img, .product-card .thumb img, .card .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.btn-add, .add-menu {
+  background: #D32F2F; /* rojo */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s ease, opacity .2s ease;
+}
+.btn-add:hover, .add-menu:hover { opacity: .9; }
+.btn-add:active, .add-menu:active { transform: scale(0.98); }
+
+#waOrder {
+  background: #25D366; /* verde WhatsApp */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#waOrder:hover { opacity: .95; }
+
+/* Grid uniforme (por si no existía en tu CSS) */
+.menu-grid, .cards, .productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+
+/* ===== Mobile Optimization (Elote King) ===== */
+:root{
+  --ek-yellow:#FFC107;
+  --ek-red:#D32F2F;
+  --ek-green:#25D366;
+  --ek-text:#222;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Inter, Arial, sans-serif;
+  color:var(--ek-text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap{ padding-left:16px; padding-right:16px; }
+img{ max-width:100%; height:auto; display:block; }
+
+/* Prevent horizontal scroll on mobile */
+body, html{ overflow-x:hidden; }
+
+/* Cards grid responsive */
+.menu-grid, .cards, .productos-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:16px;
+}
+
+/* Uniform card sizing */
+.menu-card, .product-card, .card{
+  border:2px solid var(--ek-yellow);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.08);
+}
+
+.menu-card .thumb, .product-card .thumb, .card .thumb{
+  width:100%;
+  height: 180px; /* good mobile height */
+  overflow:hidden;
+}
+.menu-card .thumb img, .product-card .thumb img, .card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.menu-card .body, .product-card .body, .card .body{
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+/* Buttons: big tap targets */
+button, .btn, .add-menu, .btn-add, #waOrder{
+  min-height:44px; /* recommended touch target */
+  padding:12px 16px;
+  font-weight:600;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Colors per request */
+.add-menu, .btn-add{ background:var(--ek-red); color:#fff; }
+#waOrder{ background:var(--ek-green); color:#fff; }
+.add-menu:active, .btn-add:active, #waOrder:active{ transform:scale(.98); }
+
+/* Forms stack on mobile */
+form .row{ display:flex; flex-direction:column; gap:8px; }
+label{ line-height:1.2; }
+
+/* Cart */
+.cart-item{ padding:10px 0; border-bottom:1px solid #eee; }
+.cart-item:last-child{ border-bottom:none; }
+.link{ background:none; color:#d00; text-decoration:underline; border:none; padding:6px 0; }
+
+/* Carrito summary line (total + count) */
+#cart + p{ font-size:1.05rem; font-weight:700; }
+
+/* Sticky WhatsApp bar on mobile */
+@media (max-width: 600px){
+  #waOrder{
+    position: sticky;
+    bottom: 12px;
+    width: 100%;
+  }
+}
+
+/* Tablet and up */
+@media (min-width: 600px){
+  .menu-grid, .cards, .productos-grid{
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+  .menu-card .thumb, .product-card .thumb, .card .thumb{
+    height: 200px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px){
+  .menu-grid, .cards, .productos-grid{
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+  .menu-card .thumb, .product-card .thumb, .card .thumb{
+    height: 220px;
+  }
+}
+
+section{ scroll-margin-top: 80px; }
+
+
+/* ===== Dark Mode (Elote King) ===== */
+:root{
+  --ek-bg:#ffffff;
+  --ek-surface:#ffffff;
+  --ek-text:#222222;
+  --ek-border:#eeeeee;
+
+  --ek-yellow:#FFC107; /* bordes tarjeta */
+  --ek-red:#D32F2F;    /* agregar */
+  --ek-green:#25D366;  /* WhatsApp */
+}
+
+[data-theme="dark"]{
+  --ek-bg:#0f0f10;
+  --ek-surface:#161617;
+  --ek-text:#e9e9ea;
+  --ek-border:#2a2a2c;
+}
+
+html, body{ background:var(--ek-bg); color:var(--ek-text); }
+
+/* Tarjetas conservan borde amarillo de marca */
+.menu-card, .product-card, .card{
+  background: var(--ek-surface);
+  border-color: var(--ek-yellow);
+  color: var(--ek-text);
+}
+
+/* Inputs y controles en dark */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea{
+  background:#1e1f20;
+  color:var(--ek-text);
+  border:1px solid var(--ek-border);
+}
+
+/* Links legibles en dark */
+[data-theme="dark"] a{ color:#9ad3ff; }
+
+/* Toggle botón estilo discreto */
+.toggle-theme{
+  background: transparent;
+  color: var(--ek-text);
+  border: 1px solid var(--ek-border);
+  border-radius: 10px;
+  padding: 8px 12px;
+  min-height: 36px;
+  cursor: pointer;
+}
+.toggle-theme:hover{ opacity:.85; }
