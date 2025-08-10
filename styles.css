@@ -261,3 +261,23 @@ h2{margin:0 0 16px;font-size:28px}
   object-fit: contain;
   display: block;
 }
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .topbar .logo {
+    max-height: 40px; /* antes seguro está mucho más grande */
+  }
+
+  .topbar .wrap {
+    padding: 5px 10px; /* menos espacio en el header */
+  }
+
+  .nav a {
+    font-size: 14px; /* texto del menú más pequeño */
+    margin: 0 5px;    /* menos separación */
+  }
+
+  .btn.primary {
+    padding: 6px 12px; /* botón más compacto */
+    font-size: 14px;
+  }
+}

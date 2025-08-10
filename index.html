@@ -79,6 +79,16 @@
           </div>
         </article>
 
+        <article class="card">
+          <img src="assets/elote_entero.png" alt="Elote entero" />
+          <div class="info">
+            <h3>Elote entero</h3>
+            <p>El mas tradicional.</p>
+            <div class="price">$70</div>
+            <button class="btn small add-menu" data-item='elote_entero'>Agregar</button>
+          </div>
+        </article>
+
          <article class="card">
           <img src="assets/elote-empanizado.png" alt="Elote empanizado" />
           <div class="info">
@@ -136,6 +146,7 @@
             <option value="chicharron">Chicharrón preparado</option>
             <option value="tostielote">Tostielote</option>
             <option value="elote-empanizado">Elote empanizado</option>
+             <option value="elote_entero">Elote entero</option>
           </select>
         </div>
 
@@ -315,6 +326,7 @@ document.addEventListener("keydown", (e) => {
     chicharron: { name: "Chicharrón preparado", price: 50 },
     tostielote: { name: "Tostielote", price: 70 },
     "elote-empanizado": { name: "Elote empanizado", price: 70 },
+    elote_entero: { name: "Elote entero", price: 40 },
   };
 
   const TOPPING_PRICE = 0;
