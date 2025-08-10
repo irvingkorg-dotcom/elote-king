@@ -316,7 +316,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-  const PHONE = "528997788333";
+  const PHONE = "528994601055";
 
   const BASES = {
     elote_vaso: { name: "Elote en vaso", price: {chico:30, mediano:40, grande:60} },
@@ -523,7 +523,7 @@ Subtotal: ${fmt(it.total)}`
   ).join('\n\n');
 
   const total = fmt(getCartTotal());
-  const msg = `Hola, quiero hacer este pedido:\n\n${cuerpo}\n\nTOTAL: ${total}`;
+  const msg = `Hola, vengo de la pagina web, quiero hacer este pedido:\n\n${cuerpo}\n\nTOTAL: ${total}`;
 
   // Abrir WhatsApp
   const url = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
