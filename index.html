@@ -574,19 +574,17 @@ Subtotal: ${fmt(it.total)}`
     productoSel.value = btn.dataset.item;
     resetBuilder();          // limpia toppings + sabritas
     updateVisibility();      // ajusta visibilidad de campos
-    goTo('#arma');
+
+    // Scroll con compensación para header en móviles
+    const arma = document.getElementById('arma');
+    if (arma) {
+      const OFFSET = 180; // Ajusta si el header es más alto o más bajo
+      const y = arma.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
 });
 
-  // Nav y botón “Ordenar” con scroll suave (sin depender del hash)
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const hash = a.getAttribute('href');
-      if (!hash || hash === '#') return;
-      e.preventDefault();
-      goTo(hash);
-    });
-  });
 
   // Init
   loadCart();

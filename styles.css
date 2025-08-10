@@ -281,3 +281,46 @@ h2{margin:0 0 16px;font-size:28px}
     font-size: 14px;
   }
 }
+/* Que los anclajes no queden debajo del header */
+#arma { scroll-margin-top: 160px; }
+
+@media (max-width: 600px) {
+  #arma { scroll-margin-top: 190px; } /* un poco más en celular */
+}
+/* Ajusta el margen al hacer scroll por enlaces con hash (#arma, etc.)
+   para que no se tape con el menú en móviles o escritorio */
+
+/* Por defecto (escritorio) */
+#arma {
+  scroll-margin-top: 100px; /* altura aproximada del header */
+}
+
+/* En móviles */
+@media (max-width: 768px) {
+  #arma {
+    scroll-margin-top: 180px; /* aumenta el margen para dejar espacio a los dropdowns */
+  }
+}
+/* Total del pedido visible y destacado */
+.cart-total {
+  background: #ffeb3b;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* En móvil, que siempre quede fijo abajo */
+@media (max-width: 768px) {
+  .cart-total {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
