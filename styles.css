@@ -198,50 +198,7 @@ h2{margin:0 0 16px;font-size:28px}
   border-color: #ffcc00;
   box-shadow: 0 0 6px rgba(255, 204, 0, 0.6);
 }
-.promo.hidden{ display:none; }
 
-.promo {
-  background: linear-gradient(90deg, #111, #222);
-  color: #fff;
-  padding: 28px 0;
-  border-bottom: 2px solid #ffcc00; /* amarillo maíz */
-}
-
-.promo-inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
-}
-
-.promo-title { margin-right: 8px; color: #ffcc00;font-size: 1.5rem; /* más grande */
-  font-weight: 900; }
-.promo-text { opacity: .95; font-size: 1.2rem; /* más grande */
-  font-weight: 500; }
-
-.promo-actions { display: flex; align-items: center; gap: 10px; }
-.promo-close {
-  background: transparent;
-  border: 0;
-  color: #fff;
-  font-size: 26px; /* más grande */
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  border-radius: 8px;
-}
-.promo-close:hover { background: rgba(255,255,255,.12); }
-
-.btn.small {padding: 12px 18px; /* más grande */
-  font-size: 1rem;
-  font-weight: 700;
-  background: #ffcc00;
-  color: #111;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;}
-  .btn.small:hover {
-  background: #ffb700;
-}
 /* ==== AJUSTE DE IMÁGENES DE PRODUCTOS ==== */
 .grid-cards .card .thumb {
   height: 180px;

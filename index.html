@@ -84,7 +84,7 @@
           <div class="info">
             <h3>Elote entero</h3>
             <p>El mas tradicional.</p>
-            <div class="price">$70</div>
+            <div class="price">$40</div>
             <button class="btn small add-menu" data-item='elote_entero'>Agregar</button>
           </div>
         </article>
@@ -221,7 +221,7 @@
       <div>
         <h3>Elote King Snacks</h3>
         <p>WhatsApp: <a href="https://wa.me/528994601055" target="_blank">899 460 1055</a></p>
-        <p>Horario: 5:00 pm – 10:00 pm</p>
+        <p>Horario: Lunes a Sabado de 5:00 pm – 10:00 pm</p>
         <p>Domicilio: Rotonda de Vista Alta</p>
       </div>
       <p class="copy">© 2025 Elote King. Hecho con antojo.</p>
@@ -240,82 +240,6 @@ const SABRITAS_PRODUCTS = [
 
 // Helper
 const usesSabritas = (prod) => SABRITAS_PRODUCTS.includes(prod);
-
-    // ====== PROMO CONFIG ======
-const PROMO = {
-  title: "🔥 Promo de fin de semana",
-  text: "2x1 en Elote en Vaso de 7–9 PM. Válido solo hoy.",
-  ctaHref: "#arma",                 // a dónde manda el botón
-  start: "2025-08-08T00:00:00-05:00", // yyyy-mm-ddTHH:mm:ss-05:00 (Monterrey)
-  end:   "2025-08-12T23:59:59-05:00",
-  key:   "ek_promo_2025_08_09"      // cambia este id cuando cambies de promo
-};
-
-const QS = new URLSearchParams(location.search);
-
-function nowMX(){
-  // hora del navegador (suficiente para un sitio estático)
-  return new Date();
-}
-
-function withinDates(start, end){
-  const n = nowMX();
-  return (!start || n >= new Date(start)) && (!end || n <= new Date(end));
-}
-
-function getPromoEnabled(){
-  // Fuerza por URL
-  if (QS.get("promo") === "on") { localStorage.setItem("ek_promo_enabled","1"); }
-  if (QS.get("promo") === "off"){ localStorage.removeItem("ek_promo_enabled"); }
-  return localStorage.getItem("ek_promo_enabled") === "1";
-}
-
-function isPromoDismissed(){
-  return localStorage.getItem(`dismiss_${PROMO.key}`) === "1";
-}
-
-function renderPromo(initial=false){
-  const el = document.getElementById("promo");
-  const titleEl = document.querySelector(".promo-title");
-  const textEl  = document.querySelector(".promo-text");
-  const ctaEl   = document.getElementById("promoCta");
-
-  const active = getPromoEnabled() && withinDates(PROMO.start, PROMO.end) && !isPromoDismissed();
-
-  if (!active){
-    el.classList.add("hidden");
-    return;
-  }
-
-  titleEl.textContent = PROMO.title;
-  textEl.textContent  = PROMO.text;
-  ctaEl.setAttribute("href", PROMO.ctaHref);
-  el.classList.remove("hidden");
-}
-
-// Cerrar banner (no vuelve a salir hasta que cambies PROMO.key o lo reactives)
-document.addEventListener("DOMContentLoaded", () => {
-  const closeBtn = document.getElementById("promoClose");
-  closeBtn?.addEventListener("click", () => {
-    localStorage.setItem(`dismiss_${PROMO.key}`, "1");
-    document.getElementById("promo").classList.add("hidden");
-  });
-
-  renderPromo(true);
-});
-
-// Atajo "admin": Ctrl + P → toggle promo on/off y render
-document.addEventListener("keydown", (e) => {
-  if (e.ctrlKey && e.key.toLowerCase() === "p") {
-    const enabled = getPromoEnabled();
-    if (enabled) localStorage.removeItem("ek_promo_enabled");
-    else localStorage.setItem("ek_promo_enabled","1");
-    // al cambiar de estado, también “desdescartar” para volver a verla
-    localStorage.removeItem(`dismiss_${PROMO.key}`);
-    renderPromo();
-    alert(`Promo ${enabled ? "desactivada" : "activada"}.`);
-  }
-});
 
   const PHONE = "528994601055";
 
